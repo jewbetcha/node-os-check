@@ -24,23 +24,24 @@ prog
     .option('--max [mac]', 'Process to run if on a Mac')
     .action(function(args, options, logger) {
         const platform = os.platform();
+        let action;
         switch (platform) {
             case 'linux':
-                let action = options.linux;
+                action = options.linux;
                 if (options.script === 'y') {
                     action = `npm run ${action}`;
                 }
                 runCommand(action);
                 break;
             case 'darwin':
-                let action = options.mac;
+                action = options.mac;
                 if (options.script === 'y') {
                     action = `npm run ${action}`;
                 }
                 runCommand(action);
                 break;
             case 'win32':
-                let action = options.win;
+                action = options.win;
                 if (options.script === 'y') {
                     action = `npm run ${action}`;
                 }

@@ -1,0 +1,14 @@
+{
+  "name": "node-os-check",
+  "version": "1.0.0",
+  "description": "A CLI tool to check your current environment",
+  "main": "index.js",
+  "author": "Coleman Rollins",
+  "license": "MIT",
+  "dependencies": {
+    "caporal": "^0.9.0"
+  },
+  "scripts": {
+    "dev": "webpack"
+  }
+}

@@ -22,8 +22,7 @@ prog
   .command("check")
   .option(
     "--script [script]",
-    "Add this flag if your command is in your package.json",
-    prog.REPEATABLE
+    "Add this flag if your command is in your package.json"
   )
   .option("--linux [linux]", "Process to run if on Linux")
   .option("--win [win]", "Process to run if on Windows")

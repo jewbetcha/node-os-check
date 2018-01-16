@@ -25,6 +25,9 @@ prog
     .action(function(args, options, logger) {
         const platform = os.platform();
         let action;
+	if (typeof(action) === 'undefined') {
+	    console.log(platform);	
+	} else {
         switch (platform) {
             case 'linux':
                 action = options.linux;
@@ -51,8 +54,9 @@ prog
                 logger.info('idk wtf system this is')
                 break;
         }
-
+	}
     });
+
 
 prog.parse(process.argv);
     

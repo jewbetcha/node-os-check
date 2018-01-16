@@ -32,10 +32,10 @@ prog
     const platform = os.platform();
     let action;
     if (
-        options.script === undefined &&
-        options.linux === undefined &&
-        options.win === undefined &&
-        options.mac === undefined
+      options.script === undefined &&
+      options.linux === undefined &&
+      options.win === undefined &&
+      options.mac === undefined
     ) {
       console.log(platform);
     } else {

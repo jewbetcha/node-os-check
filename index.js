@@ -22,7 +22,7 @@ prog
   .command("check")
   .option(
     "--script [script]",
-    "Is this a script in your package.json?(y/n)",
+    "Add this flag if your command is in your package.json",
     prog.REPEATABLE
   )
   .option("--linux [linux]", "Process to run if on Linux")
@@ -31,27 +31,32 @@ prog
   .action(function(args, options, logger) {
     const platform = os.platform();
     let action;
-    if (typeof action === "undefined") {
+    if (
+        options.script === undefined &&
+        options.linux === undefined &&
+        options.win === undefined &&
+        options.mac === undefined
+    ) {
       console.log(platform);
     } else {
       switch (platform) {
         case "linux":
           action = options.linux;
-          if (options.script === "y") {
+          if (options.script != undefined) {
             action = `npm run ${action}`;
           }
           runCommand(action);
           break;
         case "darwin":
           action = options.mac;
-          if (options.script === "y") {
+          if (options.script != undefined) {
             action = `npm run ${action}`;
           }
           runCommand(action);
           break;
         case "win32":
           action = options.win;
-          if (options.script === "y") {
+          if (options.script != undefined) {
             action = `npm run ${action}`;
           }
           runCommand(action);
